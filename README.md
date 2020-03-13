@@ -1,7 +1,5 @@
 Dummy Build:
 
-aws s3api create-bucket --bucket=build-artifacts-identity-service --region=us-east-1
-
 
 Terraform will perform the following actions:
 
@@ -46,8 +44,6 @@ Terraform will perform the following actions:
       + reserved_concurrent_executions = -1
       + role                           = (known after apply)
       + runtime                        = "nodejs10.x"
-      + s3_bucket                      = "test-build-artifacts-identity-service"
-      + s3_key                         = "v0.1/app.zip"
       + source_code_hash               = (known after apply)
       + source_code_size               = (known after apply)
       + timeout                        = 3
