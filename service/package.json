@@ -1,0 +1,13 @@
+{
+  "name": "service",
+  "version": "1.0.0",
+  "description": "Adapter example",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicolás Mendoza",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
+}
