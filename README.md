@@ -1,5 +1,16 @@
 Dummy Build:
 
+###
+
+"/users/email/{email}
+4:21
+"/users/{swid}
+4:22
+"/redirect?clientID={clientID}&callbackURL={callbackURL}
+
+
+
+
 aws s3api create-bucket --bucket=build-artifacts-identity-service --region=us-east-1
 
 

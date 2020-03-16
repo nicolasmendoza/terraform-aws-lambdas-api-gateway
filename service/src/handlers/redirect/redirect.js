@@ -1,0 +1,1 @@
+/* /redirect?clientID={clientID}&callbackURL={callbackURL}*/

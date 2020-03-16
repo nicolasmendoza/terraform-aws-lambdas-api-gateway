@@ -1,0 +1,1 @@
+/*getEmailByIdentity ->/users/{swid}*/
