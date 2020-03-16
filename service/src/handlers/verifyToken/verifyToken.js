@@ -13,7 +13,7 @@ function handler(event, context, callback) {
             'Content-Type': 'text/html; charset=utf-8',
         },
         body: JSON.stringify({
-            message: JSON.stringify(utils.buildClientResponse("VerifyToken")),
+            message: "Hello from VerifyToken!",
         }),
     };
     callback(null, response);

@@ -1,7 +1,6 @@
-/* getIdentityByEmail -> /users/emails/{email} */
-
 'use strict';
-/* verifyToken - > /authorize */
+
+/* getIdentityByEmail -> /users/emails/{email} */
 
 const handler = async event => {
     /**
@@ -13,7 +12,7 @@ const handler = async event => {
             'Content-Type': 'text/html; charset=utf-8',
         },
         body: JSON.stringify({
-            message: "Hello World!",
+            message: "Hello from getIdentityByEmail!",
         }),
     };
     return response;
