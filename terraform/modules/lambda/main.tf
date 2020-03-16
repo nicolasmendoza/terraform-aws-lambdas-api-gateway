@@ -6,7 +6,6 @@ resource "aws_iam_role" "terraform_identity_lambda_role" {
   assume_role_policy = file("${path.module}/terraform-lambda-assume-policy.json")
 }
 
-
 # TODO implement webpack and/or delegate build CI to pipeline.
 variable "build_version" {
 }
@@ -18,6 +17,11 @@ data "archive_file" "lambda_zip" {
   output_path =  "${path.root}/../build/deploy-${ var.build_version }.zip"
 }
 
+module "layers"{
+  source = "./../layers"
+}
+
+
 #:::::::::::::::::: Lambda function : verifyToken
 resource "aws_lambda_function" "lambda_verify_token" {
   function_name = "IdentityVerifyToken"
@@ -25,6 +29,8 @@ resource "aws_lambda_function" "lambda_verify_token" {
 
   filename         = data.archive_file.lambda_zip.output_path
   source_code_hash = data.archive_file.lambda_zip.output_base64sha256
+
+  layers = [module.layers.jsonwebtoken_layer_arn]
 
   role = aws_iam_role.terraform_identity_lambda_role.arn
 
